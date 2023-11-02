@@ -1,0 +1,22 @@
+<RCC>
+  <qresource prefix="rectangles">
+    <file>Rectangle.png</file>
+    <file>Rectangle2.png</file>
+    <file>Rectangle3.png</file>
+    <file>Rectangle4.png</file>
+    <file>Rectangle5.png</file>
+  </qresource>
+  <qresource prefix="backgrounds">
+    <file>ScreenPass.png</file>
+    <file>Background.png</file>
+    <file>Registration.png</file>
+  </qresource>
+  <qresource prefix="rectangleImages">
+    <file>Vector.png</file>
+    <file>admin.png</file>
+    <file>user.png</file>
+    <file>password.png</file>
+    <file>login.png</file>
+    <file>confirmPassword.png</file>
+  </qresource>
+</RCC>

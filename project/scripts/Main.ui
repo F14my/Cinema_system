@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QComboBox" name="selectCinema">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>41</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>VAG World</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="maxVisibleItems">
+     <number>5</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>Выберите кинотеатр</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Добавить кинотеатр</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="selectHall">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>40</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>VAG World</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="maxVisibleItems">
+     <number>5</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>Выберите зал</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Добавить зал</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>-10</y>
+      <width>20</width>
+      <height>1061</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>441</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>VAG World</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Выберите кинотеатр и зал для настройки конфигурации</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="next">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>170</y>
+      <width>351</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Далее</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="createSeat">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>20</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/cinema/Chair.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1920</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="images/Auth.qrc"/>
+  <include location="images/admin_cinema/admin_cinema.qrc"/>
+ </resources>
+ <connections/>
+</ui>
