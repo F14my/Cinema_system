@@ -1,22 +1,24 @@
 import sys
-import os
 from PyQt5.QtWidgets import QApplication
 from auth import Authorization
 from registration import Registration
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QSize
 from main_admin import AdminWindow
+from main_user import UserWindow
+from PyQt5 import QtGui
+from resorces import AdminCinema
+from resorces import AuthReg
 
-
-window = None
+window = Authorization
 
 
 def setPath():
-    os.chdir("../scripts")
+    QtGui.QFontDatabase.addApplicationFont(fr'scripts/other/VAG_WORLD.ttf')
 
 
 def setIcon(window):
-    window.setWindowIcon(QIcon(f"C:/Lyceum_lessons/project/scripts/images/Icon.png"))
+    window.setWindowIcon(QIcon(f"scripts/other/Icon.png"))
     window.setIconSize(QSize(100, 100))
 
 
@@ -25,6 +27,16 @@ def show_main_admin_window():
     setPath()
     window = AdminWindow()
     setIcon(window)
+    window.exit.clicked.connect(show_authorization_window)
+    window.show()
+
+
+def show_main_user_window():
+    global window
+    setPath()
+    window = UserWindow()
+    setIcon(window)
+    window.exit.clicked.connect(show_authorization_window)
     window.show()
 
 
@@ -42,8 +54,10 @@ def check_status_bar():
     global window
     if window.statusbar.currentMessage() == "ok_reg":
         show_authorization_window()
-    if window.statusbar.currentMessage() == "ok_login":
+    if window.statusbar.currentMessage() == "ok_admin":
         show_main_admin_window()
+    if window.statusbar.currentMessage() == "ok_user":
+        show_main_user_window()
 
 
 def show_registration_window():

@@ -1,21 +1,15 @@
-import os
-
-from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow
 from db import Auth
-from resorces import AuthReg
+from scripts.ui.Auth import Ui_MainWindow
 
 
-class Authorization(QMainWindow):
+class Authorization(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        os.chdir("../scripts")
-        self.path = os.getcwd()
-        self.path = self.path.replace("\\", "/")
-        uic.loadUi(f"{self.path}/Auth.ui", self)
-        self.initUI()
+        self.setupUi(self)
+        self.init_ui()
 
-    def initUI(self):
+    def init_ui(self):
         self.login.textEdited.connect(self.changer)
         self.password.textEdited.connect(self.changer)
         self.enterButton.clicked.connect(self.enter)
@@ -28,8 +22,12 @@ class Authorization(QMainWindow):
         elif db.check_password(self.login.text(), self.password.text()) is False:
             self.statusbar.showMessage("Невреный пароль")
         else:
-            db.close()
-            self.statusbar.showMessage("ok_login")
+            if db.check_user_status(self.login.text()) == 1:
+                db.close()
+                self.statusbar.showMessage("ok_admin")
+            else:
+                db.close()
+                self.statusbar.showMessage("ok_user")
 
     def changer(self):
         style = f"""border-image: url(:/rectangles/Rectangle2.png);

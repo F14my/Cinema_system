@@ -1,21 +1,17 @@
-import os
-
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow
 from db import Auth
 from string import ascii_letters
-from resorces import AuthReg
+from scripts.ui.Registration import Ui_MainWindow
 
 
-class Registration(QMainWindow):
+class Registration(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        self.path = os.getcwd()
-        self.path = self.path.replace("\\", "/")
-        uic.loadUi(f"{self.path}/Registration.ui", self)
-        self.initUI()
+        self.setupUi(self)
+        self.init_ui()
 
-    def initUI(self):
+    def init_ui(self):
         self.nextWindow = None
         self.login.textEdited.connect(self.changer)
         self.password.textEdited.connect(self.changer)
